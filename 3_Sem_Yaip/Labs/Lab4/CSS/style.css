@@ -1,0 +1,50 @@
+.table {
+    display: table;
+    border-collapse: collapse;
+    width: 500px;
+}
+
+.cap {
+    display: table-caption;
+}
+
+.thead {
+    display: table-header-group;
+}
+
+.row {
+    display: table-row;
+}
+
+.col {
+    display: table-cell;
+    border: 1px solid black;
+    width: 250px;
+}
+
+.cost_class {
+    display: table-cell;
+    border: 1px solid black;
+    width: 250px;
+
+}
+
+.tbody {
+    border: 1px solid black;
+}
+
+.tables{
+    display: flex;
+    justify-content: space-between;
+}
+.names{
+    display: flex;
+    justify-content: space-between;
+}
+.shop_name_2{
+    margin-right: 825px;
+}
+
+.table_shop{
+    margin-right: 500px;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RK1</title>
+    <meta charset="utf-8">
+</head>
+
+<body onload="clear()">
+    <h2>Фасхутдинов Азамат Рафисович ИУ6-35Б Билет №5</h2>
+    <h3>Текст задания:</h3>
+    <h4>Используя рекурсию, определить суммы 1-й и последней цифр, 2-й и предпоследней и т.д. заданного натурального
+        числа.</h4>
+    <div>
+        <p>Введите натуральное число</p>
+        <input type="text" value="123579" name="text1">
+        <input type="button" name="but" value="Отправить" onclick="res()">
+    </div>
+    <br>
+    <div id="ppp">
+        <p id='ff'>Результат:</p>
+    </div>
+    <script>
+        function test(el) {
+
+            div = document.createElement('p');
+            if (el.length == 0) {
+                return;
+            }
+            if (el.length == 1) {
+                div.textContent = Number(el);
+                document.getElementById('ppp').appendChild(div);
+                console.log(Number(el));
+                return el;
+            }
+            if (el.length == 2) {
+                div.textContent = el[0] + " + " + el[1] + " = " + (Number(el[0]) + Number(el[1]));
+                document.getElementById('ppp').appendChild(div);
+                console.log(Number(el[0]) + Number(el[1]));
+                return Number(el[0]) + Number(el[1])
+            }
+            else {
+                div.textContent = el[0] + " + " + el[el.length-1] + " = " + (Number(el[0]) + Number(el[el.length - 1]));
+                document.getElementById('ppp').appendChild(div);
+                console.log(Number(el[0]) + Number(el[el.length - 1]));
+                test(el.slice(1, -1));
+            }
+        }
+        function clear() {
+            while (document.getElementById('ppp').firstChild)
+            {
+                document.getElementById('ppp').removeChild(document.getElementById('ppp').firstChild)
+            }
+            div = document.createElement('p');
+            div.textContent = 'Результат:';
+            document.getElementById('ppp').appendChild(div);
+        }
+
+        function res() {
+            clear();
+            f = document.getElementsByName('text1')[0].value;
+            prov = /\D/;
+            if (!(prov.test(f))) {
+                test(document.getElementsByName('text1')[0].value);
+            }
+            else{
+                alert("Можно ввести только натуральное число без лишних пробелов, попробуй ещё раз");
+            }
+        }
+    </script>
+</body>
+
+</html>
