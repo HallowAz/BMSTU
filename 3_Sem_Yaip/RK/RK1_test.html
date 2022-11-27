@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RK1 practice</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h2>Фасхутдинов Азамат Рафисович ИУ6-35Б Вариант 22</h2>
+    <h3>Текст задания:</h3>
+    <h4>Дан массив чисел. Определить минимум и максимум массива, поменять их местами в массиве, вывести результат и
+        произведение этих элеметнов.</h4>
+    <div>
+        <p>Введите массив</p>
+        <input type="text" value = "fhfdhfdh" name="text1">
+        <input type="button" name="but" value="Отправить" onclick="res(document.getElementsByName('text1')[0].value)">
+    </div>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <script>
+        function res(str) {
+
+            // reg4 = /-*\d+\s*/
+            reg = /\d/;
+            // reg1 = /\D+\s*/;
+            // reg3 = /\d+\.\d+/
+            arr = str.split(' ');
+            if (str.length == 0) {
+                return alert('Строка пустая');
+            }
+            for (i = 0; i < arr.length; i++)
+            {
+                if (!(reg.test(arr[i])))
+                {
+                    arr.splice(i, 1);
+                    i--;
+                } 
+            }
+            for (i = 0; i < arr.length; i++) {
+                s = 0;
+                for (j = 0; j < arr[i].length; j++) {
+                    if ("0123456789.-".includes(arr[i][j])) {
+                        s++;
+                        console.log(arr[j])
+                    }
+                }
+                if (s == arr[i].length) {
+                    arr[i] = parseFloat(arr[i]);
+                }
+                else { return alert("NO"); }
+
+            }
+            // for (i = 0; i < arr.length; i++) {
+            //     if ((reg4.test(arr[i]))) {
+            //         if (reg.test(arr[i])){
+            //             if (reg3.test(arr[i]))
+            //             {
+            //                 arr[i] = parseFloat(arr[i]);    
+            //             }
+            //             else{
+            //             arr[i] = parseFloat(arr[i]);
+            //             }
+            //         }
+            //         else{
+            //             arr.splice(i, 1);
+            //             i--;
+            //         }
+            //     }
+            //     else {
+            //         return alert("Вводится что-то не то");
+            //     }
+            // }
+            console.log(arr);
+            imin = 0;
+            imax = 0;
+
+            for (i = 1; i < arr.length; i++) {
+                if (arr[imax] < arr[i]) {
+                    imax = i;
+                }
+                if (arr[imin] > arr[i]) {
+                    imin = i;
+                }
+            }
+
+            k = arr[imin];
+            arr[imin] = arr[imax];
+            arr[imax] = k;
+
+            resul = arr.join(' ');
+
+            mult = 1;
+
+            for (i = 0; i < arr.length; i++) {
+                mult *= arr[i];
+            }
+
+            if (document.getElementById("p1").textContent.length != 0) {
+                document.getElementById("p1").textContent = "";
+                document.getElementById("p2").textContent = "";
+            }
+            document.getElementById("p1").textContent = "Результат: " + resul;
+            document.getElementById("p2").textContent = "Произведение: " + mult;
+
+            //clear();
+        }
+        function clear() {
+            document.getElementsByName('text1')[0].value = "";
+        }
+    </script>
+</body>
+
+</html>

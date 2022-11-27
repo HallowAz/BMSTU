@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab3</title>
+    <meta charset="utf8">
+</head>
+
+<body>
+    <div id=div_1>
+        <div>
+            <table border="1">
+                <tr>
+                    <th>Первая колонка</th>
+                    <th>Вторая колонка</th>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <ol>
+                <ol>
+                    <li>Первый</li>
+                    <li>Второй</li>
+                    <li>Третий</li>
+                    <li>Четвертый</li>
+                </ol>
+                <br>
+                <ol>
+                    <li>Первый второй</li>
+                    <li>Второй второй</li>
+                    <li>Третий второй</li>
+                    <li>Четвертый второй</li>
+                </ol>
+                <br>
+                <ol>
+                    <li>Первый второй третий</li>
+                    <li>Второй второй третий</li>
+                    <li>Третий второй третий</li>
+                    <li>Четвертый второй третий</li>
+                </ol>
+            </ol>
+        </div>
+    </div>
+
+    <input type="button" value="Достать" onclick="rec(document.getElementById('div_1'), 1)">
+    <br><br>
+    <script>
+        function rec(el, a) {
+            let space = "&nbsp;".repeat(5 * a);
+            if (el.childNodes.length == 1 && el.childNodes[0].nodeType == 3) {
+                console.log(el);
+                let div = document.createElement('div');
+                div.innerHTML = space + "&lt;" + el.nodeName + "&gt;" + "&lt;" + "&frasl;" + el.nodeName + "&gt;";
+                document.body.append(div);
+            }
+            else {
+                let div = document.createElement('div');
+                div.innerHTML = space + "&lt;" + el.nodeName + "&gt;";
+                document.body.append(div);
+                console.log(el);
+                for (i = 0; i < el.childNodes.length; i++) {
+                    if (el.childNodes[i].nodeType != 3) {
+                        let j = i;
+                        rec(el.childNodes[i], a + 1);
+                        i = j;
+                    }
+                }
+                if (el.nodeName != "BR") {
+                    let en = document.createElement('div');
+                    en.innerHTML = space + "&lt;" + "&frasl;" + el.nodeName + "&gt;"
+                    document.body.append(en);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Набираем корзину</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="CSS/style.css" type="text/css">
+    <!-- <link href="https://e-learning.bmstu.ru/iu6/pluginfile.php/16891/mod_resource/content/1/bootstrap.min.css" rel="stylesheet"> -->
+    <script src="JS/Scripts.js"></script>
+</head>
+
+<body onload="clear()">
+    <h1>Страница для оформления заказа товаров</h1>
+    <form>
+
+        <div>
+            <p class="print">Наименование</p>
+            <input type="text" name="name">
+        </div>
+        <br>
+        <div>
+            <p>Стоимость</p>
+            <input type="text" name="cost">
+        </div>
+        <br>
+        <div class="names">
+            <div>
+                <input type="button" name="add_button" value="Добавить"
+                    onclick="add(document.getElementsByName('name')[0].value, document.getElementsByName('cost')[0].value, document.getElementsByClassName('tbody')[0])">
+                <input type="button" name="count_button" value="Расчитать стоимость заказа"
+                    onclick="count_cost(document.getElementsByClassName('col cost_class cost_bag'), document.getElementsByClassName('count_cost')[0])">
+            </div>
+            <div class="shop_name_2">
+                <h2>Магазинчик</h2>
+            </div>
+        </div>
+
+    </form>
+    <div class="tables">
+        <div class="table">
+            <div class="cap">
+                <div class="thead">
+                    <div class="row">
+                        <div class="col">Наименование</div>
+                        <div class="col cost_class cost_bag"
+                            onmouseover="change_color(document.getElementsByClassName('col cost_class cost_bag')[0])"
+                            onmouseleave="back(document.getElementsByClassName('col cost_class cost_bag')[0])">
+                            Стоимость, руб</div>
+                    </div>
+                </div>
+                <div class="tbody" id="tbody_bag">
+                </div>
+            </div>
+        </div>
+        <div class="table table_shop">
+            <div class="cap">
+                <div class="thead">
+                    <div class="row row_shop">
+                        <div class="col">Наименование</div>
+                        <div class="col">Стоимость, руб</div>
+                    </div>
+                </div>
+                <div class="tbody">
+                    <div class="row row_shop"
+                        onclick="add_shop(document.getElementsByClassName('row row_shop')[1], document.getElementsByClassName('tbody')[0])">
+                        <div class="col">Хлеб</div>
+                        <div class="col cost_class">40</div>
+                    </div>
+                    <div class="row row_shop"
+                        onclick="add_shop(document.getElementsByClassName('row row_shop')[2], document.getElementsByClassName('tbody')[0])">
+                        <div class="col">Молоко</div>
+                        <div class="col cost_class">80</div>
+                    </div>
+                    <div class="row row_shop"
+                        onclick="add_shop(document.getElementsByClassName('row row_shop')[3], document.getElementsByClassName('tbody')[0])">
+                        <div class="col">Печенье</div>
+                        <div class="col cost_class">150</div>
+                    </div>
+                    <div class="row row_shop"
+                        onclick="add_shop(document.getElementsByClassName('row row_shop')[4], document.getElementsByClassName('tbody')[0])">
+                        <div class="col">Яблоки</div>
+                        <div class="col cost_class">100</div>
+                    </div>
+                    <div class="row row_shop"
+                        onclick="add_shop(document.getElementsByClassName('row row_shop')[5], document.getElementsByClassName('tbody')[0])">
+                        <div class="col">Бананы</div>
+                        <div class="col cost_class">53</div>
+                    </div>
+                    <div class="row row_shop"
+                        onclick="add_shop(document.getElementsByClassName('row row_shop')[6], document.getElementsByClassName('tbody')[0])">
+                        <div class="col">Пиво</div>
+                        <div class="col cost_class">60</div>
+                    </div>
+                    <div class="row row_shop"
+                        onclick="add_shop(document.getElementsByClassName('row row_shop')[7], document.getElementsByClassName('tbody')[0])">
+                        <div class="col">Сок</div>
+                        <div class="col cost_class">120</div>
+                    </div>
+                    <div class="row row_shop"
+                        onclick="add_shop(document.getElementsByClassName('row row_shop')[8], document.getElementsByClassName('tbody')[0])">
+                        <div class="col">Пакет</div>
+                        <div class="col cost_class">5</div>
+                    </div>
+                    <div class="row row_shop"
+                        onclick="add_shop(document.getElementsByClassName('row row_shop')[9], document.getElementsByClassName('tbody')[0])">
+                        <div class="col">Карта лояльности</div>
+                        <div class="col cost_class">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="count_cost">
+
+    </div>
+</body>
+
+</html>

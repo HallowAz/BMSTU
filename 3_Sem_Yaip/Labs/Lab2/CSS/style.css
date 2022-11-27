@@ -1,0 +1,116 @@
+
+table{
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+tr{
+    border: 1px solid #ccc;
+}
+td{
+    border: 1px solid #ccc;
+}
+
+.dayofweek{
+    vertical-align: top;
+}
+th{
+    border: 1px solid #ccc;
+}
+.ch{
+    background-color: #00CC99;
+    width: 40%;
+}
+.zn{
+    background-color: #00CCFF;
+    width: 40%;
+}
+
+.twotables{
+    margin-left: 100px;
+    margin-top: 100px;
+    display: flow-root;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.twotables table{
+    margin: 10px;
+    float: left;
+}
+.ftab{
+    display: table;
+    width: auto;
+    background-color: #eeee;
+    border: 1px solid #666666;
+    border-spacing: 5px; 
+    border-collapse: collapse;
+}
+.stab{
+    display: table-row;
+    width: auto;
+    clear: both;
+    border: 1px solid #666666;
+    
+
+}
+.third{
+    float: left;
+    display: table-column;
+    width: 200px;
+    background-color: #ccc;
+    border: 1px solid #666666;
+}
+.tabled{
+    display: table;
+    border-collapse: collapse;
+    width: 30%;
+    
+}
+
+.cap{
+    display: table-caption;
+}
+.thead{
+    display: table-header-group;
+    width: 30%;
+}
+.tbody{
+    display: table-row-group;
+}
+.rowt{
+    display: table-row;
+}
+
+.col{
+    display: table-cell;
+    border: 1px solid black;
+    width:10%;
+}
+
+.tbody{
+    border: 1px solid #000000;
+}
+
+.col1{
+    display: table-cell;
+    border: 1px solid black;
+    width: 5%;
+}
+.col2{
+    display: table-cell;
+    border: 1px solid black;
+    width:6%;
+}
+.col3{
+    display: table-cell;
+    border: 1px solid black;
+    width: 40%;
+}
+.col4{
+    display: table-cell;
+    border: 1px solid black;
+    width: 40%;    
+}
